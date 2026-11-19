@@ -1,0 +1,37 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.doubao.adblock'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.doubao.adblock"
+        minSdk 24                 // 与宿主一致（宿主 minSdk 24）
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false   // 模块不需要混淆；入口类名必须与 assets/xposed_init 一致
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    lint {
+        abortOnError false
+    }
+}
+
+dependencies {
+    // 关键：compileOnly，绝不能 implementation —— 否则会把 XposedBridge 打进 apk 与框架冲突
+    compileOnly 'de.robv.android.xposed:api:82'
+}

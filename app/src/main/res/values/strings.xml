@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">豚豚剧广告拦截</string>
+    <string name="module_desc">拦截「豚豚剧」(com.shizi.tool) 的广告，保留激励视频</string>
+</resources>

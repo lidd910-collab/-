@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- LSPosed 里默认勾选的作用域：宿主包名 -->
+    <array name="xposedscope">
+        <item>com.shizi.tool</item>
+    </array>
+</resources>

@@ -1,0 +1,20 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.PREFER_SETTINGS)
+    repositories {
+        google()
+        mavenCentral()
+        // 传统 XposedBridge API 82 所在仓库（compilerOnly，不打包进 apk）
+        maven { url 'https://api.xposed.info/' }
+    }
+}
+
+rootProject.name = "AdBlockLsposed"
+include ':app'
